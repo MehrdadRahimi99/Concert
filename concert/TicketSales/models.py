@@ -4,7 +4,7 @@ from django.db import models
 class consertmodel (models.Model):
     Name = models.CharField(max_length=100)
     SingerName = models.CharField(max_length=100)
-    Length = models.models.IntegerField()
+    Length = models.IntegerField()
     
     def __str__(self):
         return self.SingerName
