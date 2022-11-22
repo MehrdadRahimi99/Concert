@@ -20,7 +20,22 @@ class locationmodel (models.Model):
         return self.Name    
 
 class timemodel(models.Model):
-    concertmodel = models.ForeignKey("to=consertmodel", on_delete=models.PROTECT)
-    locationmodel = models.ForeignKey("to=locationmodel", on_delete=models.PROTECT)
-    startdatetime = models.DateTimeField()
-    seats = models.IntegerField()
+    ConcertModel = models.ForeignKey("to=consertmodel", on_delete=models.PROTECT)
+    LocationModel = models.ForeignKey("to=locationmodel", on_delete=models.PROTECT)
+    StartDateTime = models.DateTimeField()
+    Seats = models.IntegerField()
+    
+    Start = 1
+    End = 2
+    Cancle = 3
+    Sales = 4
+    status_choices = (("Start", "فروش بلیط شروع شده است"),
+                      ("End", "فروش بلیط تمام شده است"),
+                      ("Cancle", "این سانس کنسل شده است"),
+                      ("Sales", "در حال فروش بلیط"))
+    status = models.models.IntegerField(choices=status_choices)
+    
+    def __str__(self):
+        return "Time: {} ConcertName: {} Location: {}".format(self.StartDateTime,
+                                                              self.ConcertModel.Name,
+                                                              self.LocationModel.name)
