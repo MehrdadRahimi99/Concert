@@ -44,3 +44,30 @@ class timemodel(models.Model):
         return "Time: {} ConcertName: {} Location: {}".format(self.StartDateTime,
                                                               self.ConcertModel.Name,
                                                               self.LocationModel.name)
+
+
+class profilemodel(models.model):
+    Name = models.CharField(max_length=100)
+    Family = models.CharField(max_length=100)
+    
+    Man = 1
+    Woman = 2
+    status_choises = (("Man","مرد"), ("Woman","زن"))
+    Gender = models.IntegerField(status_choises)
+    
+    def __str__(self):
+        return "fullname: {} {}".format(self.Name, self.Family)
+    
+    
+class ticketmodel(models.model):
+    ProfileModel = models.ForeignKey("profilemodel", on_delete=models.PROTECT)
+    TimeModel = models.ForeignKey("timemodel", on_delete=models.PROTECT)
+    Name = models.CharField(max_length=100)
+    Price = models.IntegerField()
+    
+    def __str__(self):
+        return "ticketinfo: profile: {} concertinfo: {}".format(timemodel.__str__)
+    
+
+
+    
