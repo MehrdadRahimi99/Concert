@@ -8,6 +8,7 @@ class consertmodel (models.Model):
     SingerName = models.CharField(max_length=100)
     Length = models.IntegerField()
     test = models.CharField(max_length=10, null=True)
+    Poster = models.ImageField(upload_to = "consertimages/", null=True)
     
     def __str__(self):
         return self.SingerName
@@ -46,10 +47,10 @@ class timemodel(models.Model):
                                                               self.LocationModel.name)
 
 
-class profilemodel(models.model):
+class profilemodel(models.Model):
     Name = models.CharField(max_length=100)
     Family = models.CharField(max_length=100)
-    
+    ProfiletImage = models.ImageField(upload_to = "profileimages/")
     Man = 1
     Woman = 2
     status_choises = (("Man","مرد"), ("Woman","زن"))
@@ -59,12 +60,12 @@ class profilemodel(models.model):
         return "fullname: {} {}".format(self.Name, self.Family)
     
     
-class ticketmodel(models.model):
+class ticketmodel(models.Model):
     ProfileModel = models.ForeignKey("profilemodel", on_delete=models.PROTECT)
     TimeModel = models.ForeignKey("timemodel", on_delete=models.PROTECT)
     Name = models.CharField(max_length=100)
     Price = models.IntegerField()
-    
+    TicketImage = models.ImageField(upload_to = "ticketimages/")
     def __str__(self):
         return "ticketinfo: profile: {} concertinfo: {}".format(timemodel.__str__)
     
