@@ -7,7 +7,7 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('TicketSales', '0004_alter_consertmodel_options_and_more'),
+        ('TicketSales', '0004_alter_concertmodel_options_and_more'),
     ]
 
     operations = [
@@ -43,6 +43,6 @@ class Migration(migrations.Migration):
             field=models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to='TicketSales.concertmodel', verbose_name='کنسرت'),
         ),
         migrations.DeleteModel(
-            name='consertmodel',
+            name='concertmodel',
         ),
     ]
