@@ -7,7 +7,7 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('TicketSales', '0002_consertmodel_test'),
+        ('TicketSales', '0002_concertmodel_test'),
     ]
 
     operations = [
@@ -22,9 +22,9 @@ class Migration(migrations.Migration):
             ],
         ),
         migrations.AddField(
-            model_name='consertmodel',
+            model_name='concertmodel',
             name='ConcertImage',
-            field=models.ImageField(null=True, upload_to='consertimages/'),
+            field=models.ImageField(null=True, upload_to='concertimages/'),
         ),
         migrations.CreateModel(
             name='ticketmodel',
