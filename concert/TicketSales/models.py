@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 
 
-class consertmodel (models.Model):
+class concertmodel (models.Model):
     
     class Meta:
         verbose_name = "کنسرت"
@@ -12,7 +12,7 @@ class consertmodel (models.Model):
     Name = models.CharField(max_length=100, verbose_name ="نام کنسرت")
     SingerName = models.CharField(max_length=100, verbose_name ="خواننده")
     Length = models.IntegerField(verbose_name =" مدت زمان")
-    Poster = models.ImageField(upload_to = "consertimages/", null=True, verbose_name = "‍‍‍‍‍‍‍‍‍پوستر")
+    Poster = models.ImageField(upload_to = "concertimages/", null=True, verbose_name = "‍‍‍‍‍‍‍‍‍پوستر")
     
     def __str__(self):
         return self.SingerName
@@ -40,7 +40,7 @@ class timemodel(models.Model):
         verbose_name = "زمان"
         verbose_name_plural = "زمان"
         
-    ConcertModel = models.ForeignKey(to=consertmodel, on_delete=models.PROTECT, verbose_name ="کنسرت")
+    ConcertModel = models.ForeignKey(to=concertmodel, on_delete=models.PROTECT, verbose_name ="کنسرت")
     LocationModel = models.ForeignKey(to=locationmodel, on_delete=models.PROTECT, verbose_name ="مکان")
     StartDateTime = models.DateTimeField(verbose_name ="تایم شروع")
     Seats = models.IntegerField(verbose_name ="صندلی")
