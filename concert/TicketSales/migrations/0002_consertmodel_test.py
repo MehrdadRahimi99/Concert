@@ -11,7 +11,7 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.AddField(
-            model_name='consertmodel',
+            model_name='concertmodel',
             name='test',
             field=models.CharField(max_length=10, null=True),
         ),
