@@ -7,12 +7,12 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('TicketSales', '0003_profilemodel_consertmodel_concertimage_ticketmodel'),
+        ('TicketSales', '0003_profilemodel_concertmodel_concertimage_ticketmodel'),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='consertmodel',
+            name='concertmodel',
             options={'verbose_name': 'کنسرت', 'verbose_name_plural': 'کنسرت'},
         ),
         migrations.AlterModelOptions(
@@ -24,13 +24,13 @@ class Migration(migrations.Migration):
             name='ConcertImage',
         ),
         migrations.RemoveField(
-            model_name='consertmodel',
+            model_name='concertmodel',
             name='test',
         ),
         migrations.AddField(
-            model_name='consertmodel',
+            model_name='concertmodel',
             name='Poster',
-            field=models.ImageField(null=True, upload_to='consertimages/', verbose_name='\u200d\u200d\u200d\u200d\u200d\u200d\u200d\u200d\u200dپوستر'),
+            field=models.ImageField(null=True, upload_to='concertimages/', verbose_name='\u200d\u200d\u200d\u200d\u200d\u200d\u200d\u200d\u200dپوستر'),
         ),
         migrations.AlterField(
             model_name='consertmodel',
@@ -38,12 +38,12 @@ class Migration(migrations.Migration):
             field=models.IntegerField(verbose_name=' مدت زمان'),
         ),
         migrations.AlterField(
-            model_name='consertmodel',
+            model_name='concertmodel',
             name='Name',
             field=models.CharField(max_length=100, verbose_name='نام کنسرت'),
         ),
         migrations.AlterField(
-            model_name='consertmodel',
+            model_name='concertmodel',
             name='SingerName',
             field=models.CharField(max_length=100, verbose_name='خواننده'),
         ),
@@ -120,7 +120,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='timemodel',
             name='ConcertModel',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to='TicketSales.consertmodel', verbose_name='کنسرت'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to='TicketSales.concertmodel', verbose_name='کنسرت'),
         ),
         migrations.AlterField(
             model_name='timemodel',
