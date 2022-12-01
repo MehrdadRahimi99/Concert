@@ -21,7 +21,7 @@ from TicketSales.views import concertListView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('ticketsales/concert/list', concertListView )
+    path('ticketSales/concert/list', concertListView )
 ]
 
 if settings.DEBUG:
