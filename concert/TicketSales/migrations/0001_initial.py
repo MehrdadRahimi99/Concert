@@ -13,7 +13,7 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='consertmodel',
+            name='concertmodel',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('Name', models.CharField(max_length=100)),
@@ -38,7 +38,7 @@ class Migration(migrations.Migration):
                 ('StartDateTime', models.DateTimeField()),
                 ('Seats', models.IntegerField()),
                 ('status', models.IntegerField(choices=[('Start', 'فروش بلیط شروع شده است'), ('End', 'فروش بلیط تمام شده است'), ('Cancle', 'این سانس کنسل شده است'), ('Sales', 'در حال فروش بلیط')])),
-                ('ConcertModel', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to='TicketSales.consertmodel')),
+                ('ConcertModel', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to='TicketSales.concertmodel')),
                 ('LocationModel', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to='TicketSales.locationmodel')),
             ],
         ),
